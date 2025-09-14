@@ -49,7 +49,7 @@ const technologyStack = [
 
 function About() {
   return (
-    <div id="about" className="animate-slide-bottom-top">
+    <div id="about" className="animate-slide-bottom-top pt-20">
       <div className="flex flex-col gap-20">
         <ContentFrame frameName="About">
           <p className="w-[90%] mx-auto text-lg md:text-xl">

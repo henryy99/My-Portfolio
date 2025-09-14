@@ -9,7 +9,7 @@ function ProjectCard({ imgPath, projectName, description, inProcess = false }) {
       <h2 className="text-ascent-green font-semibold uppercase tracking-wider">
         {projectName}
       </h2>
-      <h4 className="uppercase text-gray-500 tracking-wider">
+      <h4 className="uppercase text-gray-500 tracking-wider font-semibold">
         {inProcess ? "In process..." : "Done"}
       </h4>
 

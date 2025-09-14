@@ -10,7 +10,7 @@ function Introduction() {
         Hi, I'm <span className="text-ascent-green">Henry Nguyen</span>
       </h1>
       <h4 className="text-ascent-green md:text-lg">Graduated at FGCU, 2025</h4>
-      <p className=" tracking-wide md:text-xl">
+      <p className=" tracking-wide md:text-xl animate-slide-bottom-top">
         Software Engineering Degree & Website Developer
       </p>
 
@@ -25,9 +25,14 @@ function Introduction() {
         />
       </a>
 
-      <button className="project-button border-ascent-green border-1 rounded-sm uppercase tracking-wider px-3 py-2 font-semibold cursor-pointer md:px-6 animate-slide-bottom-top ">
-        <a href="#projects">My Projects</a>
-      </button>
+      <div className="flex gap-5">
+        <button className="project-button border-ascent-green border-1 rounded-sm uppercase tracking-wider px-3 py-2 font-semibold cursor-pointer md:px-6 animate-slide-left-right ">
+          <a href="#projects">My Projects</a>
+        </button>
+        <button className="resume-button border-ascent-green border-1 rounded-sm uppercase tracking-wider px-3 py-2 font-semibold cursor-pointer md:px-6 animate-slide-right-left bg-ascent-green text-primary-dark">
+          <a href="#projects">My Resume</a>
+        </button>
+      </div>
     </div>
   );
 }
