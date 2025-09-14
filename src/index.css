@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-background: #0b192e;
+  --primary-text: #dedbd2;
+  --secondary-background: #1d3557;
+  --ascent-green: #80ed99;
+}
+@theme {
+  --color-primary-dark: #0b192e;
+  --color-secondary-dark: #0f203b;
+  --color-text-grey: #dedbd2;
+  --color-ascent-green: #80ed99;
+  --color-dark-green: #64ffda1a;
+
+  --animate-rotate-90: rotate-90 1.5s ease-out;
+  --animate-slide-bottom-top: slide-bottom-to-top 1.5s ease-out;
+  --animate-rolling: rolling 3.5s ease-in-out;
+  --animate-fade-in: fadeIn 1.5s ease-in-out;
+  @keyframes rotate-90 {
+    0% {
+      transform: rotateY(90deg);
+    }
+    100% {
+      transform: rotateY(0);
+    }
+  }
+  @keyframes slide-bottom-to-top {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes rolling {
+    0% {
+      transform: translateX(-100%) rotateZ(0);
+    }
+    50% {
+      transform: translateX(0) rotateZ(180deg);
+    }
+    75% {
+      transform: translate(100%) rotateZ(270deg);
+    }
+    100% {
+      transform: translate(0) rotateZ(360deg);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--primary-text);
+}
+.project-button {
+  transition: color 0.6s ease;
+  z-index: 1;
+  position: relative;
+}
+.project-button:hover {
+  color: var(--primary-background);
+}
+.project-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--ascent-green);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+.project-button:hover::before {
+  width: 100%;
+}
+
+.slide-out::after {
+  content: "→";
+  display: inline-block;
+  transform: translateX(3px);
+}
+
+.slide-out:hover::after {
+  animation: slide-repeat 1s infinite;
+}
+.slide-out:hover {
+  transform: translateX(-5px);
+  transition: all 1s ease;
+}
+
+.rotate-start {
+  animation-name: rotate-90;
+  animation-duration: 1.5s;
+}
+
+@keyframes slide-repeat {
+  0% {
+    transform: translateX(3px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(3px);
+  }
+}
