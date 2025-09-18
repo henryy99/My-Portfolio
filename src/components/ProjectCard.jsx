@@ -4,7 +4,7 @@ function ProjectCard({ item }) {
   return (
     <div className="border-1 border-dark-green w-full flex flex-col items-center gap-5 pt-8  pb-4 shadow-2xl rounded-md hover:bg-dark-green animate-rotate-90 h-full hover:-translate-y-2 transition-all duration-500">
       <img
-        src={item.imgPath || `/vite.svg`}
+        src={`${import.meta.env.BASE_URL}` + item.imgPath}
         alt="project image"
         className="w-40 flex-1"
       />
