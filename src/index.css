@@ -165,6 +165,7 @@ body {
   background-color: var(--color-primary-dark);
   margin-top: 0.3rem;
   font-size: 0.9rem;
+  border-radius: 6px;
 }
 ::placeholder {
   text-transform: uppercase;
